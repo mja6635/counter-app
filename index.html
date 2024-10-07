@@ -9,47 +9,43 @@
 
   <style>
     :root, html, body {
-      margin: 0;
-      padding: 0;
-      background-color: var(--ddd-accent-1);
+      margin: 12px;
+      padding: 4px;
+      background-color: var(--ddd-theme-default-beaver70, #f0f0f0); 
     }
     #demo {
-      margin: var(--ddd-spacing-2);
+      margin: var(--ddd-radius-sm, 8px); 
     }
     counter-app {
-      margin: var(--ddd-spacing-2);
-      border: var(--ddd-border-md);
-      border-radius: var(--ddd-radius-lg);
+      margin: var(--ddd-radius-sm, 8px); 
+      border: var(--ddd-border-md, 2px solid black); 
+      border-radius: var(--ddd-border-sm, 4px); 
     }
     counter-app:hover {
-      box-shadow: var(--ddd-boxShadow-sm);
-    }
-    #example {
-      --counter-app-font-size: var(--ddd-font-size-l);
-      background-color: var(--ddd-accent-2);
-      color: var(--ddd-primary-17);
+      box-shadow: var(--ddd-boxShadow-md, 4px 4px 10px rgba(0, 0, 0, 0.2)); 
     }
   </style>
   <title>counter-app</title>
 </head>
 
 <body>
-  <div id="demo">
-    <h1>counter-app</h1>
-    <!-- this is going to do whatever the tag's defaults are -->
-    <h2>Default</h2>
-    <counter-app></counter-app>
-    <h2>Slot usage</h2>
-    <counter-app data-accent="2" data-primary="17"><div>Sample slot content</div></counter-app>
-    <h2>Property usage</h2>
-    <counter-app id="example" title="Sample property title"></counter-app>
+  <div id="demo"> 
+    <h1>Counter 1</h1>
+    <counter-app title="Counting from 0-25">
+      <div>Is this working</div>
+    </counter-app>
+    
+    <h2>Counter 2</h2>
+    <counter-app id="counter-app-2" title="This is supposed to have my styles">
+      <div>Still goes up to 25</div>
+    </counter-app>
   </div>
+
   <script type="module" src="./src/counter-app.js"></script>
 
-  <!-- Take HAX, the Web and you further down the rabbit hole -->
   <style>
     #follow-the-white-rabbit {
-      margin: var(--ddd-spacing-4) auto 64px  16px;
+      margin: var(--ddd-spacing-4) auto 64px 16px;
       background-color: var(--ddd-accent-4);
     }
     #follow-the-white-rabbit[open] summary {
@@ -83,9 +79,6 @@
   <details id="follow-the-white-rabbit" open>
     <summary>How to Develop</summary>
     <div class="content">
-      <p>
-      
-      </p>
       <p>
         You can edit the current page by modifying <code>index.html</code><br />
         To edit your <strong>counter-app</strong> tag, modify <code>src/counter-app.js</code>.
@@ -125,4 +118,5 @@
     </div>
   </details>
 </body>
+
 </html>
