@@ -39,9 +39,15 @@ export class counterApp extends DDDSuper(LitElement) {
     `];
   }
 
+  increment(e) {
+    this.count++;
+  }
+
   render() {
     return html`
 <div class="wrapper">
+  <div>${this.count}</div>
+  <button>:D</button><button @click="${this.increment}">.</button>
   <div>${this.title}</div>
   <slot></slot>
 </div>`;
